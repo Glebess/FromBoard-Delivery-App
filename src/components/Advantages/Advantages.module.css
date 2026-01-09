@@ -1,0 +1,16 @@
+.div_container {
+  padding-left: var(--main-padding);
+  padding-right: var(--main-padding);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.p_header_advantages {
+  font-size: 30px;
+  font-family: var(--main-font);
+  font-weight: 900;
+}
+.div_container_block {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}

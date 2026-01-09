@@ -1,0 +1,97 @@
+.welcome_container {
+  padding-left: var(--main-padding);
+  padding-right: var(--main-padding);
+  font-family: var(--main-font);
+  display: flex;
+  gap: 16px;
+
+  padding-top: 72px;
+}
+.div_text {
+  color: #111827;
+  width: 50%;
+  box-sizing: border-box;
+  height: 100%;
+}
+.div_text p:first-child {
+  font-weight: 900;
+  font-size: 36px;
+  margin: 0;
+}
+.div_text p:nth-child(2) {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0;
+  margin-top: 10px;
+}
+.div_text img {
+  width: 100%;
+  height: 360px;
+  margin-top: 10px;
+  margin: 0;
+}
+.div_calculator {
+  border-radius: 16px;
+  background-color: #f9fafb;
+  width: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 24px;
+  padding-left: 27px;
+  padding-right: 27px;
+  box-sizing: border-box;
+  padding-bottom: 24px;
+}
+.div_calculator p {
+  margin: 0;
+  width: 360px;
+  text-align: center;
+}
+.div_calculator p:first-child {
+  font-weight: 700;
+  font-size: 30px;
+}
+.div_calculator p:nth-child(2) {
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: 400;
+}
+.div_calculator_form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.div_calculator_form input::placeholder {
+  color: #9ca3af;
+  padding: 12px;
+  font-weight: 400;
+  font-size: 16px;
+}
+.div_calculator_form div {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.div_calculator_form input {
+  box-sizing: border-box;
+  border-radius: 4px;
+  height: 40px;
+  border: 2px solid #111827;
+}
+.div_calculator button {
+  background-color: var(--main-purple1);
+  height: 44px;
+  border: none;
+  border-radius: 4px;
+  color: #f9fafb;
+  font-size: 16px;
+  font-weight: 700;
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
