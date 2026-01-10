@@ -1,61 +1,53 @@
 import { useState } from "react";
 import styles from "./Feedback.module.css";
+import Input from "../components/ComponentShare/Input";
 
 const Feedback = () => {
   const [formFeedBack, setFormFeedBack] = useState({
     name: "",
     email: "",
-    phone: "",
+    tel: "",
     theme: "",
     text: "",
   });
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { id, value } = e.target;
     setFormFeedBack((prev) => ({
       ...prev,
-      [name]: value,
+      [id]: value,
     }));
   };
-  {
-    console.log(formFeedBack);
-  }
   return (
     <div className={styles.div_container}>
       <p>Остались вопросы?</p>
       <div>
         <form>
-          <input
-            name="name"
+          <Input
+            id="name"
             placeholder="Имя"
-            required
             value={formFeedBack.name}
             onChange={handleChange}
           />
-          <input
-            name="email"
+          <Input
             placeholder="Почта"
             type="email"
-            required
             value={formFeedBack.email}
             onChange={handleChange}
           />
-          <input
-            name="phone"
+          <Input
             placeholder="Телефон"
             type="tel"
-            required
             value={formFeedBack.phone}
             onChange={handleChange}
           />
-          <input
-            name="theme"
+          <Input
+            id="theme"
             placeholder="Тема вопроса"
-            required
             value={formFeedBack.theme}
             onChange={handleChange}
           />
           <textarea
-            name="text"
+            id="text"
             placeholder="Сообщение..."
             required
             value={formFeedBack.text}

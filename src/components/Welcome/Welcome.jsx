@@ -1,6 +1,26 @@
 import styles from "./Welcome.module.css";
 import img from "./Rectangle.png";
+import { useState } from "react";
+import Input from "../ComponentShare/Input";
 const Welcome = () => {
+  const [calculatorForm, setCalculatorForm] = useState({
+    name: "",
+    email: "",
+    tel: "",
+    square: "",
+    weight: "",
+    country: "",
+    city: "",
+    regionDelivery: "",
+    cityDelivery: "",
+  });
+  const handleChangeForm = (e) => {
+    const { id, value } = e.target;
+    setCalculatorForm((prev) => ({
+      ...prev,
+      [id]: value,
+    }));
+  };
   //   const sumbitCalculator = () => {};
   return (
     <div className={styles.welcome_container}>
@@ -15,29 +35,67 @@ const Welcome = () => {
         </p>
         <img src={img} />
       </div>
-
+      {console.log(calculatorForm)}
       <div className={styles.div_calculator}>
         <p>Калькулятор доставки</p>
         <p>Посчитайте, сколько будет стоить перевозка покупки из зарубежа</p>
         <form className={styles.div_calculator_form}>
-          <input placeholder="Имя" id="name" required />
+          <Input
+            placeholder={"Имя"}
+            id={"name"}
+            onChange={handleChangeForm}
+            value={calculatorForm.name}
+          />
           <div>
-            <input placeholder="Почта" type="email" id="email" required></input>
-            <input placeholder="Телефон" type="tel" id="tel" required></input>
-            <input placeholder="Общая площадь, м²" id="square" required></input>
-            <input placeholder="Вес, кг" id="weight" required></input>
-            <input placeholder="Страна покупки" id="country" required></input>
-            <input placeholder="Город покупки" id="city" required></input>
-            <input
+            <Input
+              placeholder="Почта"
+              type="email"
+              onChange={handleChangeForm}
+              value={calculatorForm.email}
+            />
+            <Input
+              placeholder="Телефон"
+              type="tel"
+              onChange={handleChangeForm}
+              value={calculatorForm.tel}
+            />
+            <Input
+              placeholder="Общая площадь, м²"
+              id="square"
+              onChange={handleChangeForm}
+              value={calculatorForm.square}
+            />
+            <Input
+              placeholder="Вес, кг"
+              id="weight"
+              onChange={handleChangeForm}
+              value={calculatorForm.weight}
+            />
+            <Input
+              placeholder="Страна покупки"
+              id="country"
+              required
+              onChange={handleChangeForm}
+              value={calculatorForm.country}
+            />
+            <Input
+              placeholder="Город покупки"
+              id="city"
+              onChange={handleChangeForm}
+              value={calculatorForm.city}
+            />
+            <Input
               placeholder="Область доставки"
               id="regionDelivery"
-              required
-            ></input>
-            <input
+              onChange={handleChangeForm}
+              value={calculatorForm.regionDelivery}
+            />
+            <Input
               placeholder="Город доставки"
               id="cityDelivery"
-              required
-            ></input>
+              onChange={handleChangeForm}
+              value={calculatorForm.cityDelivery}
+            />
           </div>
           <button>Заказать расчёт</button>
         </form>
