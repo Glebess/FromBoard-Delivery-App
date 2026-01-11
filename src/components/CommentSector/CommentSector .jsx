@@ -2,24 +2,21 @@ import CommentList from "./Comment";
 import styles from "./Сomment.module.css";
 import arrowLeft from "./Image/arrowLeft.svg";
 import arrowRight from "./Image/arrowRight.svg";
-import { useState } from "react";
-// import quotes from "./Image/quotes.svg";
+import { useEffect, useState } from "react";
 const CommentSector = () => {
   const [commentId, setCommentId] = useState(0);
   const [comment, setComment] = useState(CommentList.slice(0, 2));
-
+  useEffect(() => {
+    setComment(CommentList.slice(commentId, commentId + 2));
+  }, [commentId]);
   const handleCommentNext = () => {
-    if (commentId !== CommentList.length - 1) {
-      setCommentId(() => commentId + 1);
-      setComment(CommentList.slice(commentId, commentId + 2));
+    if (commentId + 2 < CommentList.length) {
+      setCommentId((prev) => prev + 1);
     }
   };
   const handleCommentPrev = () => {
-    if (commentId !== 0) {
-      setCommentId(() => commentId - 1);
-      if (commentId > 2) {
-        setComment(() => CommentList.slice(commentId, commentId - 2));
-      }
+    if (commentId - 1 >= 0) {
+      setCommentId((prev) => prev - 1);
     }
   };
   return (
@@ -32,14 +29,16 @@ const CommentSector = () => {
 
         <div className={styles.div_comment}>
           {comment.map((comment) => (
-            <div className={styles.div_comment_block} key={comment.name}>
+            <div className={styles.div_comment_block} key={comment.id}>
               <p>{comment.text}</p>
-
               <p>{comment.name}</p>
             </div>
           ))}
         </div>
-        <button onClick={handleCommentNext}>
+        <button
+          onClick={handleCommentNext}
+          disabled={commentId + 2 >= CommentList.length}
+        >
           <img src={arrowRight} />
         </button>
       </div>

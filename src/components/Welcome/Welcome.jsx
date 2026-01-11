@@ -21,7 +21,6 @@ const Welcome = () => {
       [id]: value,
     }));
   };
-  //   const sumbitCalculator = () => {};
   return (
     <div className={styles.welcome_container}>
       <div className={styles.div_text}>
@@ -35,7 +34,6 @@ const Welcome = () => {
         </p>
         <img src={img} />
       </div>
-      {console.log(calculatorForm)}
       <div className={styles.div_calculator}>
         <p>Калькулятор доставки</p>
         <p>Посчитайте, сколько будет стоить перевозка покупки из зарубежа</p>

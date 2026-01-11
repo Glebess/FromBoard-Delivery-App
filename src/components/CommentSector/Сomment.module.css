@@ -10,10 +10,15 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
+  &:disabled {
+    cursor: not-allowed;
+  }
 }
 .div_container_comment {
   display: flex;
-  gap: 47px;
+  gap: 23px;
+  padding-left: var(--main-padding);
+  padding-right: var(--main-padding);
 }
 .div_container p:first-child {
   font-weight: 900;
@@ -35,9 +40,10 @@
   color: #6b7280;
 }
 .div_comment_block {
+  box-sizing: border-box;
   position: relative;
   background-color: #f9fafb;
-  width: 626px;
+  min-width: 626px;
   height: 350px;
   border-radius: 16px;
   padding-top: 16px;

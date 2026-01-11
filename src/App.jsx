@@ -4,7 +4,7 @@ import Welcome from "./components/Welcome/Welcome";
 import styles from "./App.module.css";
 import QualityGuarantees from "./components/QualityGuarantees/QualityGuarantees.JSX";
 import CommentSector from "./components/CommentSector/CommentSector ";
-import Feedback from "./Feedback/Feedback";
+import Feedback from "./components/Feedback/Feedback";
 import Basement from "./components/Basement/Basement";
 function App() {
   return (

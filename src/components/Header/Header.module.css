@@ -65,8 +65,10 @@
   width: 200px;
   border-radius: 4px;
   color: #f9fafb;
+  transition: all 0.3s ease;
   &:hover {
     cursor: pointer;
+    background-color: var(--main-purple);
   }
 }
 .div_nav {
